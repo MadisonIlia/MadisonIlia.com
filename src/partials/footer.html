@@ -1,0 +1,17 @@
+<div class="footer">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
+<style>
+  .footer {
+    width: 100%;
+    margin: 0;
+    background-color: var(--grey-color);
+    color: white;
+    text-align: center;
+    padding: var(--main-padding);
+    box-sizing: border-box;
+  }
+</style>
+<script>
+  document.getElementById(
+    "copyright-year"
+  ).innerHTML = new Date().getFullYear();
+</script>
