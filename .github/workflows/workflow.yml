@@ -1,56 +1,22 @@
-name: build
+name: Build and Deploy
 on: [push]
-
 jobs:
-  ci:
-    runs-on: ubuntu-18.04
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
         with:
-          node-version: "14.12.0"
-      - run: npm ci
-      - run: npm run build
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run publish-coverage
-  npm-release:
-    #only run this task if a tag starting with 'v' was used to trigger this (i.e. a tagged release)
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: ci
-    runs-on: ubuntu-18.04
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: "10.19.0"
-      - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./.npmrc
-      - run: npm ci
-      - run: npm run build
-      #create npm package
-      - run: npm pack
+          persist-credentials: false
 
-      #create GitHub release
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
+      - run: |
+          npm install
+          npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false #contains(github.ref, '-beta.') == true
-
-      #upload package to GitHub release
-      - name: Upload GitHub Release Assets
-        uses: alexellis/upload-assets@0.2.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          asset_paths: '["./*.tgz"]'
-
-      #upload to npm
-      - run: npm publish
+          BRANCH: gh-pages
+          FOLDER: dist
+          CLEAN: true # Automatically remove deleted files from the deploy branch
