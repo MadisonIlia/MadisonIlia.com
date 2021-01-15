@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "buld": "gulp default",
+    "build": "gulp build",
     "start": "gulp start"
   },
   "repository": {
