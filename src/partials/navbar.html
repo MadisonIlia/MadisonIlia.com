@@ -1,8 +1,16 @@
+<%
+  const data = {
+    page: typeof page !== 'undefined' ? page:undefined
+  };
+%>
 <div class="navbar">
   <a class="logo" href="/"> MadisonIlia </a>
   <div class="links">
     <a href="/">Home</a>
-    <a href="/about.html">About</a>
+    <a href="/about.html" class="<%= data.page === 'about'? 'active': ''%>">About</a>
+    <a href=" /novels.html" class="<%= data.page === 'novels'? 'active': ''%>">Novels</a>
+    <a href=" /hire-me.html" class="<%= data.page === 'hire-me'? 'active': ''%>">Hire Me</a>
+    <a href=" /contact.html" class="<%= data.page === 'contact'? 'active': ''%>">Contact</a>
   </div>
 </div>
 <style>
@@ -14,7 +22,6 @@
     justify-content: space-between;
     padding: var(--main-padding);
     transition: background-color 0.3s ease-in-out;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -28,6 +35,10 @@
     padding: 10px 15px;
   }
 
-  .navbar .links {
+  .navbar a.active {
+    background-color: rgba(0, 0, 0, .3);
+    padding: 20px;
   }
+
+  .navbar .links {}
 </style>

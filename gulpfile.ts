@@ -9,7 +9,9 @@ function clean(done) {
 
 function templates() {
     return gulp.src('src/*.html')
-        .pipe(ejs())
+        .pipe(ejs({
+
+        }))
         .pipe(gulp.dest('./dist'))
 }
 

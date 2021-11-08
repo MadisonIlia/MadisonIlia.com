@@ -5,8 +5,7 @@
   --main-padding: 20px;
 }
 
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -21,6 +20,9 @@ body {
 .hero1 {
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -39,6 +41,7 @@ body {
   width: 100%;
   background-color: #918ef4;
 }
+
 .hero4 {
   height: 100%;
   width: 100%;
