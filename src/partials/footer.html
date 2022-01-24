@@ -1,13 +1,25 @@
-<div class="footer">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
+<%
+  const data = {
+    fixed: typeof fixed !== 'undefined' ? fixed : true
+  };
+%>
+
+<div class="footer <%= data.fixed ? 'fixed' : ''%>">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
 <style>
   .footer {
     width: 100%;
     margin: 0;
-    background-color: var(--grey-color);
-    color: white;
+    /* background-color: var(--grey-color); */
+    color: black;
     text-align: center;
     padding: var(--main-padding);
     box-sizing: border-box;
+  }
+
+  .fixed{
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
   }
 </style>
 <script>

@@ -1,16 +1,17 @@
 <%
   const data = {
-    page: typeof page !== 'undefined' ? page:undefined
+    page: typeof page !== 'undefined' ? page : undefined
   };
 %>
+
 <div class="navbar">
   <a class="logo" href="/"> MadisonIlia </a>
   <div class="links">
-    <a href="/">Home</a>
+    <a href="/" class="<%= data.page === 'index' ? 'active': ''%>">Home</a>
     <a href="/about.html" class="<%= data.page === 'about'? 'active': ''%>">About</a>
-    <a href=" /novels.html" class="<%= data.page === 'novels'? 'active': ''%>">Novels</a>
-    <a href=" /hire-me.html" class="<%= data.page === 'hire-me'? 'active': ''%>">Hire Me</a>
-    <a href=" /contact.html" class="<%= data.page === 'contact'? 'active': ''%>">Contact</a>
+    <a href="/novels.html" class="<%= data.page === 'novels'? 'active': ''%>">Novels</a>
+    <a href="/hire-me.html" class="<%= data.page === 'hire-me'? 'active': ''%>">Hire Me</a>
+    <a href="/contact.html" class="<%= data.page === 'contact'? 'active': ''%>">Contact</a>
   </div>
 </div>
 <style>
@@ -36,9 +37,6 @@
   }
 
   .navbar a.active {
-    background-color: rgba(0, 0, 0, .3);
-    padding: 20px;
+    text-decoration: underline;
   }
-
-  .navbar .links {}
 </style>
