@@ -11,14 +11,15 @@
 
 <body>
   
+
 <div class="navbar">
   <a class="logo" href="/"> MadisonIlia </a>
   <div class="links">
-    <a href="/">Home</a>
+    <a href="/" class="">Home</a>
     <a href="/about.html" class="">About</a>
-    <a href=" /novels.html" class="active">Novels</a>
-    <a href=" /hire-me.html" class="">Hire Me</a>
-    <a href=" /contact.html" class="">Contact</a>
+    <a href="/novels.html" class="active">Novels</a>
+    <a href="/hire-me.html" class="">Hire Me</a>
+    <a href="/contact.html" class="">Contact</a>
   </div>
 </div>
 <style>
@@ -44,20 +45,48 @@
   }
 
   .navbar a.active {
-    background-color: rgba(0, 0, 0, .3);
-    padding: 20px;
+    text-decoration: underline;
   }
-
-  .navbar .links {}
 </style>
   <div class="content">
     <p>
-      My debut novel is in the editing phase!
+    <h2>Navigating Justice: The Crow (2022)</h2>
+    <a href="images/the-crow.jpg" target="_blank">
+      <img src="images/the-crow.jpg" style="max-width:5em; float: left; padding-right: 10px;" />
+    </a>
+    <p>My debut novel, <b>Navigating Justice: The Crow</b>, is currently in the editing phase!
 
-      This is the first book in a murder mystery suspense series. The book is projected to be released before the end of
-      2021. I am beyond excited to begin sharing content and to reveal the title! Stay tuned!
+      This is the first entry in the <i>Navigating Justice</i> murder mystery series, and is expected to be released in
+      early 2022.
+    <div clearfix></div>
+    </p>
     </p>
   </div>
+  
+
+<div class="footer fixed">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
+<style>
+  .footer {
+    width: 100%;
+    margin: 0;
+    /* background-color: var(--grey-color); */
+    color: black;
+    text-align: center;
+    padding: var(--main-padding);
+    box-sizing: border-box;
+  }
+
+  .fixed{
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+  }
+</style>
+<script>
+  document.getElementById(
+    "copyright-year"
+  ).innerHTML = new Date().getFullYear();
+</script>
 </body>
 
 </html>

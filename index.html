@@ -30,14 +30,15 @@
 
 <body>
   
+
 <div class="navbar">
   <a class="logo" href="/"> MadisonIlia </a>
   <div class="links">
-    <a href="/">Home</a>
+    <a href="/" class="active">Home</a>
     <a href="/about.html" class="">About</a>
-    <a href=" /novels.html" class="">Novels</a>
-    <a href=" /hire-me.html" class="">Hire Me</a>
-    <a href=" /contact.html" class="">Contact</a>
+    <a href="/novels.html" class="">Novels</a>
+    <a href="/hire-me.html" class="">Hire Me</a>
+    <a href="/contact.html" class="">Contact</a>
   </div>
 </div>
 <style>
@@ -63,14 +64,11 @@
   }
 
   .navbar a.active {
-    background-color: rgba(0, 0, 0, .3);
-    padding: 20px;
+    text-decoration: underline;
   }
-
-  .navbar .links {}
 </style>
   <div class="hero1">
-    <p>
+    <p style="width:50%">
       Welcome! I am beyond excited to have you here! Things to explore:
 
       Current and Future Novels
@@ -81,38 +79,27 @@
       Please sign up for free and exclusive content only available to email subscribers!
     </p>
   </div>
-  <div class="hero2">
-
+  <div class="hero2" style="background-color: #02090c; text-align: center;">
+    <img src="images/the-crow-coming-soon.jpg" style="max-width:100%; max-height: 100%" />
   </div>
-  <p>
-    Donec convallis commodo lobortis. Vestibulum maximus luctus diam, nec
-    vulputate velit scelerisque vel. Sed imperdiet euismod tellus. Aliquam
-    erat volutpat. Nam faucibus dolor id lobortis rutrum. Proin finibus ex
-    augue, vel mollis tortor tincidunt ut. Vestibulum semper elementum mi, in
-    semper sem venenatis sed. Duis nec neque a ex elementum vehicula.
-  </p>
-  <p>
-    Vestibulum imperdiet aliquet ultricies. Aliquam erat volutpat. Fusce vel
-    bibendum lacus. Donec in odio at mauris gravida egestas a at odio.
-    Maecenas fermentum viverra sapien. Nunc volutpat mattis imperdiet. Aliquam
-    erat volutpat. In sit amet dui rutrum, euismod diam vel, congue mauris.
-    Vivamus et lobortis odio, in maximus magna. Ut ornare sapien libero, eget
-    consectetur velit iaculis sed. Vivamus hendrerit at augue id tempus. Duis
-    vel ante volutpat, laoreet enim eu, lacinia nisi. Aenean quis justo
-    pulvinar, sagittis eros vel, convallis urna. Sed ultrices aliquam ante eu
-    pharetra. Maecenas eget ante quis velit efficitur luctus. Praesent commodo
-    eros id velit mattis egestas.
-  </p>
-  <div class="footer">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
+  
+
+<div class="footer ">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
 <style>
   .footer {
     width: 100%;
     margin: 0;
-    background-color: var(--grey-color);
-    color: white;
+    /* background-color: var(--grey-color); */
+    color: black;
     text-align: center;
     padding: var(--main-padding);
     box-sizing: border-box;
+  }
+
+  .fixed{
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
   }
 </style>
 <script>
@@ -120,7 +107,6 @@
     "copyright-year"
   ).innerHTML = new Date().getFullYear();
 </script>
-
 </body>
 
 </html>

@@ -13,14 +13,15 @@
 
 <body class="about">
   
+
 <div class="navbar">
   <a class="logo" href="/"> MadisonIlia </a>
   <div class="links">
-    <a href="/">Home</a>
+    <a href="/" class="">Home</a>
     <a href="/about.html" class="active">About</a>
-    <a href=" /novels.html" class="">Novels</a>
-    <a href=" /hire-me.html" class="">Hire Me</a>
-    <a href=" /contact.html" class="">Contact</a>
+    <a href="/novels.html" class="">Novels</a>
+    <a href="/hire-me.html" class="">Hire Me</a>
+    <a href="/contact.html" class="">Contact</a>
   </div>
 </div>
 <style>
@@ -46,17 +47,39 @@
   }
 
   .navbar a.active {
-    background-color: rgba(0, 0, 0, .3);
-    padding: 20px;
+    text-decoration: underline;
   }
-
-  .navbar .links {}
 </style>
   <div class="content">
     <p>
       Coming soon...
     </p>
   </div>
+  
+
+<div class="footer fixed">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb</div>
+<style>
+  .footer {
+    width: 100%;
+    margin: 0;
+    /* background-color: var(--grey-color); */
+    color: black;
+    text-align: center;
+    padding: var(--main-padding);
+    box-sizing: border-box;
+  }
+
+  .fixed{
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+  }
+</style>
+<script>
+  document.getElementById(
+    "copyright-year"
+  ).innerHTML = new Date().getFullYear();
+</script>
 </body>
 
 </html>
