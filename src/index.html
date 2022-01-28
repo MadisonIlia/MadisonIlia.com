@@ -2,24 +2,35 @@
 
 <head>
   <%- include('./partials/head.html') %>
+  <style>
+    .navbar {
+      background-color: transparent !important;
+    }
+
+  </style>
 </head>
 
 <body>
-  <%- include('partials/navbar.html', {page: 'index'}) %>
-  <div class="hero1">
-    <p style="width:50%">
-      Welcome! I am beyond excited to have you here! Things to explore:
-
-      Current and Future Novels
-      More about me
-      Available services
-      Social media presence
-      How to send me a personal message!
-      Please sign up for free and exclusive content only available to email subscribers!
-    </p>
+  <%- include('partials/navbar.html') %>
+  <div class="top-fade" style="margin-top: -80px; position: relative;">
+    <img src="images/the-crow-coming-soon.jpg" style="width: 100%;" />
   </div>
-  <div class="hero2" style="background-color: #02090c; text-align: center;">
-    <img src="images/the-crow-coming-soon.jpg" style="max-width:100%; max-height: 100%" />
+
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Welcome!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+        I am beyond excited to have you here! Things to explore:
+        <br/>
+        Current and Future Novels<br/>
+        More about me<br/>
+        Available services<br/>
+        Social media presence<br/>
+        How to send me a personal message!<br/>
+        Please sign up for free and exclusive content only available to email subscribers!<br/>
+        <br/>
+      </p></p>
+    </div>
   </div>
   <%- include('./partials/footer.html', { fixed: false }) %>
 </body>
