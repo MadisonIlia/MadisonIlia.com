@@ -2,25 +2,6 @@
 
 <head>
   <%- include('./partials/head.html') %>
-  <style>
-    .navbar {
-      background-color: transparent !important;
-      position: fixed;
-    }
-
-    .is-scrolled .navbar {
-      background-color: var(--primary-color) !important;
-    }
-  </style>
-  <script>
-    window.onscroll = function () {
-      if (window.scrollY > 0) {
-        document.body.classList.add("is-scrolled");
-      } else {
-        document.body.classList.remove("is-scrolled");
-      }
-    };
-  </script>
 </head>
 
 <body>

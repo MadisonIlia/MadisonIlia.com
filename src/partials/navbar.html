@@ -4,30 +4,7 @@
   };
 %>
 
-<div class="navbar">
-  <a class="logo" href="/"> MadisonIlia </a>
-  <div class="links">
-    <a href="/" class="<%= data.page === 'index' ? 'active': ''%>">Home</a>
-    <a href="/about.html" class="<%= data.page === 'about'? 'active': ''%>">About</a>
-    <a href="/novels.html" class="<%= data.page === 'novels'? 'active': ''%>">Novels</a>
-    <a href="/hire-me.html" class="<%= data.page === 'hire-me'? 'active': ''%>">Hire Me</a>
-    <a href="/contact.html" class="<%= data.page === 'contact'? 'active': ''%>">Contact</a>
-  </div>
-</div>
 <style>
-  .navbar {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--main-padding);
-    transition: background-color 0.3s ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
   .navbar a {
     text-decoration: none;
     color: inherit;
@@ -39,4 +16,37 @@
   .navbar a.active {
     text-decoration: underline;
   }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
 </style>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="font-weight: bold">MADISON ILIA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links"
+      aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-links">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link <%= data.page === 'about' ? 'active': ''%>"
+            aria-current="page">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/novels.html" class="nav-link <%= data.page === 'novels' ? 'active': ''%>"
+            aria-current="page">Novels</a>
+        </li>
+        <li class="nav-item">
+          <a href="/hire-me.html" class="nav-link <%= data.page === 'hire-me' ? 'active': ''%>" aria-current="page">
+            Hire Me</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact.html" class="nav-link <%= data.page === 'contact' ? 'active': ''%>"
+            aria-current="page">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
