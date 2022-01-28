@@ -2,11 +2,11 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+<script type="text/javascript" src="lib/bootstrap/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="stylesheet" id="et-gf-open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700&amp;ver=1.3.12" type="text/css" media="all">
 </head>
 <style>
 </style>
@@ -14,42 +14,44 @@
 <body class="about">
   
 
-<div class="navbar">
-  <a class="logo" href="/"> MadisonIlia </a>
-  <div class="links">
-    <a href="/" class="">Home</a>
-    <a href="/about.html" class="active">About</a>
-    <a href="/novels.html" class="">Novels</a>
-    <a href="/hire-me.html" class="">Hire Me</a>
-    <a href="/contact.html" class="">Contact</a>
-  </div>
-</div>
 <style>
-  .navbar {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--main-padding);
-    transition: background-color 0.3s ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .navbar a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px 15px;
-  }
-
   .navbar a.active {
     text-decoration: underline;
   }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
 </style>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="font-weight: bold">MADISON ILIA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links"
+      aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-links">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link active"
+            aria-current="page">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/novels.html" class="nav-link "
+            aria-current="page">Novels</a>
+        </li>
+        <li class="nav-item">
+          <a href="/hire-me.html" class="nav-link " aria-current="page">
+            Hire Me</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact.html" class="nav-link "
+            aria-current="page">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div class="content">
     <div class="hero">
       <img src="images/madison-on-a-horse.jpg" style="max-width:100%;max-height:100%" />
@@ -61,20 +63,20 @@
         (}—{) Madison Ilia
       </div>
     </div>
-    <p> I suppose a formal introduction is appropriate. I'm Madison Ilia. I live in the middle of nowhere town, where
+    <p>I suppose a formal introduction is appropriate. I'm Madison Ilia. I live in the middle of nowhere town, where
       the sun shines once a week if we're lucky, we have more rocks than grass, and the trees have taken over; but it's
       ok we hold our own when we need to cut it. I talk too much, type even faster, laugh when I shouldn't, drink too
       much coffee or Rasa (wearerasa.com), and I'm allergic to red food coloring. The reaction is . . . . more talking,
       faster walking, an overload of writing, and an unattainable amount of energy. If energy were sellable, I wouldn't
       need my current day/night/overnight job (a little rotating shift humor).</p>
 
-    <p> I love Jesus and strive to be the best version of myself every day; some days are better than others.</p>
+    <p>I love Jesus and strive to be the best version of myself every day; some days are better than others.</p>
 
-    <p> I'm a legit mom, a dog mom, a horse mom, a sister, a daughter, an energetic individual, and a writer that has
-      many words with a shortage of hours in a day to write them all down. A police dispatcher most days and a sane
-      person every once in a while. A licensed massage therapist, when it suits me. And lastly, a book nerd. What writer
+    <p>I'm the mother of a wonderful 3 year old girl. I'm also a dog mom, a horse mom, a sister, a daughter, an energetic individual, and a writer that has
+      many words with a shortage of hours in a day to write them all down. I'm a police dispatcher most days, a sane
+      person every once in a while, a licensed massage therapist when it suits me, and lastly, a book nerd. What writer
       do you know that doesn't equally enjoy reading? One might say I have a lot of interests that are scattered all
-      over the place, can't say I would correct them. I like to embrace life and experience as much of this beautiful
+      over the place; can't say I would correct them. I like to embrace life and experience as much of this beautiful
       world God created for us as I can!</p>
 
     <p> See, that wasn't half bad. Subscribe to my monthly newsletter to get exclusive content and release dates only
@@ -107,6 +109,7 @@
     "copyright-year"
   ).innerHTML = new Date().getFullYear();
 </script>
+
 </body>
 
 </html>
