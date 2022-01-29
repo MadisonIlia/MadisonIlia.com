@@ -8,7 +8,7 @@
 
 <body class="about">
   <%- include('partials/navbar.html', { page: 'about' }) %>
-  <div class="content">
+  <div class="container">
     <div class="hero">
       <img src="images/madison-on-a-horse.jpg" style="max-width:100%;max-height:100%" />
       <!--TODO show this overtop the image-->
@@ -28,7 +28,8 @@
 
     <p>I love Jesus and strive to be the best version of myself every day; some days are better than others.</p>
 
-    <p>I'm the mother of a wonderful 3 year old girl. I'm also a dog mom, a horse mom, a sister, a daughter, an energetic individual, and a writer that has
+    <p>I'm the mother of a wonderful 3 year old girl. I'm also a dog mom, a horse mom, a sister, a daughter, an
+      energetic individual, and a writer that has
       many words with a shortage of hours in a day to write them all down. I'm a police dispatcher most days, a sane
       person every once in a while, a licensed massage therapist when it suits me, and lastly, a book nerd. What writer
       do you know that doesn't equally enjoy reading? One might say I have a lot of interests that are scattered all
@@ -38,8 +39,8 @@
     <p> See, that wasn't half bad. Subscribe to my monthly newsletter to get exclusive content and release dates only
       available to subscribers! I'm on Facebook and Instagram and check my email daily! Reach out if you feel so
       compelled I would love to hear from you! Stay blessed!</p>
+    <%- include('./partials/footer.html') %>
   </div>
-  <%- include('./partials/footer.html', {fixed: false}) %>
 </body>
 
 </html>
