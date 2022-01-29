@@ -9,9 +9,12 @@
 <link rel="stylesheet" id="et-gf-open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700&amp;ver=1.3.12" type="text/css" media="all">
   <style>
     .navbar {
-      background-color: transparent !important;
+      /* background-color: transparent !important; */
     }
 
+    .top-fade {
+      /* margin-top: -80px; */
+    }
   </style>
 </head>
 
@@ -56,53 +59,39 @@
     </div>
   </div>
 </nav>
-  <div class="top-fade" style="margin-top: -80px; position: relative;">
+  <div class="top-fade" style="position: relative;">
     <img src="images/the-crow-coming-soon.jpg" style="width: 100%;" />
   </div>
 
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
+  <div class="px-4 pt-5 my-5 text-center">
     <h1 class="display-4 fw-bold">Welcome!</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
         I am beyond excited to have you here! Things to explore:
-        <br/>
-        Current and Future Novels<br/>
-        More about me<br/>
-        Available services<br/>
-        Social media presence<br/>
-        How to send me a personal message!<br/>
-        Please sign up for free and exclusive content only available to email subscribers!<br/>
-        <br/>
-      </p></p>
+        <br />
+        Current and Future Novels<br />
+        More about me<br />
+        Available services<br />
+        Social media presence<br />
+        How to send me a personal message!<br />
+        Please sign up for free and exclusive content only available to email subscribers!<br />
+        <br />
+      </p>
     </div>
+    
+<hr />
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="col-12">
+    &#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Rain Publishing, LLC
   </div>
-  
-
-<div class="footer ">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb
 </div>
-<style>
-  .footer {
-    width: 100%;
-    margin: 0;
-    /* background-color: var(--grey-color); */
-    color: black;
-    text-align: center;
-    padding: var(--main-padding);
-    box-sizing: border-box;
-  }
 
-  .fixed {
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
-  }
-</style>
 <script>
   document.getElementById(
     "copyright-year"
   ).innerHTML = new Date().getFullYear();
 </script>
-
+  </div>
 </body>
 
 </html>
