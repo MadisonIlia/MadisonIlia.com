@@ -3,26 +3,13 @@
     fixed: typeof fixed !== 'undefined' ? fixed : true
   };
 %>
-
-<div class="footer <%= data.fixed ? 'fixed' : ''%>">&#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Madison Plumb
+<hr />
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="col-12">
+    &#169;&nbsp;<span id="copyright-year">2021</span>&nbsp;Rain Publishing, LLC
+  </div>
 </div>
-<style>
-  .footer {
-    width: 100%;
-    margin: 0;
-    /* background-color: var(--grey-color); */
-    color: black;
-    text-align: center;
-    padding: var(--main-padding);
-    box-sizing: border-box;
-  }
 
-  .fixed {
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
-  }
-</style>
 <script>
   document.getElementById(
     "copyright-year"

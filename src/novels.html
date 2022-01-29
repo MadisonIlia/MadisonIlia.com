@@ -6,21 +6,41 @@
 
 <body>
   <%- include('partials/navbar.html', {page: 'novels'}) %>
-  <div class="content">
-    <p>
-    <h2>Navigating Justice: The Crow (2022)</h2>
-    <a href="images/the-crow.jpg" target="_blank">
-      <img src="images/the-crow.jpg" style="max-width:5em; float: left; padding-right: 10px;" />
-    </a>
-    <p>My debut novel, <b>Navigating Justice: The Crow</b>, is currently in the editing phase!
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="images/the-crow.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400"
+          loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Navigating Justice: The Crow (2022)</h1>
+        <p>
+          Sometimes, even with the best intentions…the lines of justice and revenge get crossed.
+        </p>
 
-      This is the first entry in the <i>Navigating Justice</i> murder mystery series, and is expected to be released in
-      early 2022.
-    <div clearfix></div>
-    </p>
-    </p>
+        <p> Sophia Dimitri has the perfect life—a great husband, a beautiful toddler, and a job she loves. She and her
+          husband, Luka, are undercover DEA agents based in Manhattan, New York. After Luka and their son, Niklaus, are
+          killed in a freak car incident, Sophia quickly suspects foul play.</p>
+
+        <p>The case is abruptly closed, forcing Sophia and her partner, Ace, to take matters into their own hands.
+          Setting out to find justice for her family they begin looking for The Crow, a drug organization tied to a
+          world they are not equipped to navigate—a world where criminals hide behind badges, family ties don’t always
+          mean blood, and people are rarely who they appear to be.</p>
+
+        <p> When emotions are intertwined with blinding pain, reason doesn’t enter the equation and everyone has the
+          potential to become a ticking time bomb, bound to detonate without notice.</p>
+
+        <p> As the investigation comes full circle, the duo finds themselves in a fight for their lives…crossing
+          invisible boundaries from which they can never return.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/footer.html') %>
   </div>
-  <%- include('./partials/footer.html') %>
+
 </body>
 
 </html>
