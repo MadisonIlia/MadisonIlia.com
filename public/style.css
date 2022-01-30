@@ -1,6 +1,9 @@
 * {
     font-family: "Times New Roman", Times, serif;
 }
+body{
+    background-color: #F9F9F9;
+}
 
 .img-link {
     text-decoration: none !important;
