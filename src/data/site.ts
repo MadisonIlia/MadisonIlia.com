@@ -49,7 +49,7 @@ export const SITE = {
     },
     {
       name: 'Goodreads',
-      url: 'https://www.goodreads.com/author/show/22584102.Madison_Ilia',
+      url: 'https://www.goodreads.com/author/show/22241042.Madison_Ilia',
       handle: 'Madison Ilia',
     },
   ],
@@ -70,7 +70,7 @@ export const BOOKS: Book[] = [
     amazonUrl:
       'https://www.amazon.com/Blurred-Alliances-Navigating-Justice-Madison/dp/B0CDZ41YH5',
     goodreadsUrl:
-      'https://www.goodreads.com/author/show/22584102.Madison_Ilia',
+      'https://www.goodreads.com/book/show/195882407-blurred-alliances',
     isNew: true,
   },
   {
@@ -92,6 +92,6 @@ export const BOOKS: Book[] = [
     amazonUrl:
       'https://www.amazon.com/Crow-Navigating-Justice-Book-ebook/dp/B09RJPSP2M',
     goodreadsUrl:
-      'https://www.goodreads.com/author/show/22584102.Madison_Ilia',
+      'https://www.goodreads.com/book/show/60443583-the-crow',
   },
 ];
