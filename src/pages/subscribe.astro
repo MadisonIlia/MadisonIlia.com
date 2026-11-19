@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title={`Subscribe — ${SITE.author}`}
+  description="Subscribe to Madison Ilia's newsletter for release dates, updates, and subscriber-only content."
+  activePage="subscribe"
+>
+  <section class="page-hero section-dark">
+    <div class="container">
+      <span class="eyebrow">Reader Newsletter</span>
+      <h1>Stay in the Loop</h1>
+      <p class="lead">
+        Receive release dates, behind-the-scenes updates, and exclusive content only available to
+        email subscribers.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-parchment">
+    <div class="container subscribe-card">
+      <NewsletterForm variant="light" idPrefix="subscribe-page" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-block: clamp(3rem, 6vw, 4.25rem) 2.5rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .lead {
+    color: var(--text-muted-light);
+    max-width: 54ch;
+    margin: 0;
+  }
+
+  .subscribe-card {
+    max-width: 720px;
+    background-color: var(--bg-paper);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.75rem, 4vw, 3rem);
+    box-shadow: var(--shadow-card);
+  }
+</style>

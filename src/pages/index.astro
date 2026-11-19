@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookCard from '../components/BookCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { BOOKS } from '../data/site';
+---
+
+<BaseLayout activePage="home">
+  <section class="hero section-dark">
+    <img
+      src="/images/the-crow-banner.jpg"
+      alt="Starry night sky above a dark highway with Navigating Justice: The Crow"
+      width="2000"
+      height="1333"
+      fetchpriority="high"
+      class="hero-bg"
+    />
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <span class="eyebrow">Romantic Suspense &middot; Indie Author</span>
+      <h1>Where Justice, Loyalty &amp; Vengeance Collide</h1>
+      <p class="hero-lead">
+        Welcome to the official home of <strong>Madison Ilia</strong>, author of the
+        <em>Navigating Justice</em> series—featuring <em>The Crow</em> and the newest installment,
+        <em>Blurred Alliances</em>.
+      </p>
+      <div class="hero-actions">
+        <a href={BOOKS[0].amazonUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Read Book 2: Blurred Alliances
+        </a>
+        <a href="/novels.html" class="btn btn-outline-light">
+          Explore the Series
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Books</span>
+        <h2>Navigating Justice Series</h2>
+        <p class="section-intro">
+          Undercover DEA agents, fractured loyalties, and the thin line between justice and revenge.
+        </p>
+      </div>
+
+      <div class="books-stack">
+        {BOOKS.map((book) => <BookCard book={book} compact />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-parchment">
+    <div class="container about-teaser">
+      <div class="about-teaser-media">
+        <img
+          src="/images/bio-alt.jpg"
+          alt="Author Madison Ilia smiling"
+          width="800"
+          height="1000"
+          loading="lazy"
+          class="portrait-img"
+        />
+      </div>
+      <div class="about-teaser-body">
+        <span class="eyebrow eyebrow-dark">Meet the Author</span>
+        <h2>Small-Town Roots, High-Stakes Stories</h2>
+        <p>
+          I'm Madison Ilia—a writer with too many words and a shortage of hours in the day to get
+          them all down. When I'm not writing, you'll find me working rotating shifts as a police
+          dispatcher, practicing massage therapy, chasing after my daughter, and drinking way too
+          much coffee.
+        </p>
+        <a href="/about.html" class="btn btn-outline-dark">More About Madison</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-slate">
+    <div class="container newsletter-wrap">
+      <div class="newsletter-copy">
+        <span class="eyebrow">Reader Club</span>
+        <h2>Get Release Dates &amp; Exclusive Content</h2>
+        <p>
+          Subscribe to my newsletter for behind-the-scenes updates, early cover reveals, and
+          exclusive bonus scenes only available to email subscribers.
+        </p>
+      </div>
+      <NewsletterForm variant="dark" idPrefix="home-newsletter" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: clamp(480px, 72vh, 680px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-block: 4.5rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(11, 17, 32, 0.92) 0%,
+      rgba(11, 17, 32, 0.78) 52%,
+      rgba(11, 17, 32, 0.48) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 40rem;
+    margin-inline: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    color: #ffffff;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    color: #e2e8f0;
+    margin-bottom: 2rem;
+    max-width: 52ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-intro {
+    color: var(--text-muted-light);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  .books-stack {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .about-teaser {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .portrait-img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .eyebrow-dark {
+    color: #9a6b3b;
+  }
+
+  .about-teaser-body h2 {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .about-teaser-body p {
+    color: var(--text-muted-dark);
+    margin-bottom: 1.75rem;
+    max-width: 54ch;
+  }
+
+  .newsletter-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+
+  .newsletter-copy h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-copy p {
+    color: var(--text-muted-light);
+    margin: 0;
+  }
+
+  @media (max-width: 820px) {
+    .hero-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(11, 17, 32, 0.86) 0%,
+        rgba(11, 17, 32, 0.88) 100%
+      );
+    }
+
+    .about-teaser,
+    .newsletter-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .about-teaser-media {
+      max-width: 300px;
+    }
+  }
+</style>

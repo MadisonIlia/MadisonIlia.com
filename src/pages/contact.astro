@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title={`Contact — ${SITE.author}`}
+  description="Connect with author Madison Ilia via email, Facebook, Instagram, TikTok, or Goodreads."
+  activePage="contact"
+>
+  <section class="page-hero section-dark">
+    <div class="container">
+      <span class="eyebrow">Connect</span>
+      <h1>Get In Touch</h1>
+    </div>
+  </section>
+
+  <section class="section section-parchment">
+    <div class="container contact-grid">
+      <div class="contact-media">
+        <img
+          src="/images/bio-alt.jpg"
+          alt="Author Madison Ilia"
+          width="800"
+          height="1000"
+          fetchpriority="high"
+          class="contact-portrait"
+        />
+      </div>
+
+      <div class="contact-body">
+        <h2>I’d love to hear from you!</h2>
+        <p>
+          I check my email daily and will respond as soon as my schedule allows. You can also
+          <a href="/subscribe.html">subscribe to my newsletter</a> for exclusive content only
+          available to email subscribers.
+        </p>
+
+        <div class="contact-card">
+          <span class="contact-label">Direct Email</span>
+          <a href={`mailto:${SITE.email}`} class="contact-email">{SITE.email}</a>
+        </div>
+
+        <h3>Find me on social media</h3>
+        <div class="social-grid">
+          {
+            SITE.socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-card"
+              >
+                <div class="social-card-head">
+                  {'icon' in social && social.icon && (
+                    <img src={social.icon} alt="" width="20" height="20" class="social-card-icon" />
+                  )}
+                  <span class="social-name">{social.name}</span>
+                </div>
+                <span class="social-handle">{social.handle}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-block: clamp(3rem, 6vw, 4rem) 2.25rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 360px) 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .contact-portrait {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .contact-body h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-body p {
+    color: var(--text-muted-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-body p a {
+    color: #8c5a2b;
+    font-weight: 600;
+  }
+
+  .contact-card {
+    background-color: var(--bg-paper);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .contact-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9a6b3b;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-email {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-dark);
+  }
+
+  .contact-email:hover {
+    text-decoration: underline;
+  }
+
+  .contact-body h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.15rem;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-night);
+    color: var(--text-light);
+    text-decoration: none;
+    border: 1px solid var(--border-dark);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .social-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+  }
+
+  .social-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-card-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .social-name {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .social-handle {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 820px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-media {
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .social-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

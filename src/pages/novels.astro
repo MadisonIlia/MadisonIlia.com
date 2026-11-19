@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookCard from '../components/BookCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { BOOKS, SITE } from '../data/site';
+---
+
+<BaseLayout
+  title={`Novels — ${SITE.author}`}
+  description="Explore the Navigating Justice romantic suspense series by Madison Ilia, including The Crow and Blurred Alliances."
+  activePage="novels"
+>
+  <section class="page-hero section-dark">
+    <div class="container">
+      <span class="eyebrow">Bibliography</span>
+      <h1>The Navigating Justice Series</h1>
+      <p class="lead">
+        High-stakes romantic suspense where undercover operatives, family ties, and blurred lines
+        push every character to the edge.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-dark books-section">
+    <div class="container books-list">
+      {
+        BOOKS.map((book, index) => (
+          <BookCard book={book} reverse={index % 2 === 1} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section-parchment">
+    <div class="container next-book-box">
+      <div>
+        <span class="eyebrow eyebrow-dark">Coming Next</span>
+        <h2>Waiting on Book 3?</h2>
+        <p>
+          Join the newsletter to be the first to hear about upcoming releases, cover reveals, and
+          exclusive bonus chapters.
+        </p>
+      </div>
+      <NewsletterForm variant="light" idPrefix="novels-newsletter" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .lead {
+    color: var(--text-muted-light);
+    max-width: 58ch;
+    margin: 0;
+    font-size: 1.12rem;
+  }
+
+  .books-section {
+    padding-top: 3rem;
+  }
+
+  .books-list {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .eyebrow-dark {
+    color: #9a6b3b;
+  }
+
+  .next-book-box {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+
+  .next-book-box h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .next-book-box p {
+    color: var(--text-muted-dark);
+    margin: 0;
+  }
+
+  @media (max-width: 820px) {
+    .next-book-box {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

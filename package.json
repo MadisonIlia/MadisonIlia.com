@@ -1,34 +1,26 @@
 {
   "name": "madisonilia.com",
-  "version": "1.0.0",
-  "description": "source code for MadisonIlia.com",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Source code for MadisonIlia.com",
   "scripts": {
-    "build": "gulp build",
-    "start": "gulp start"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TwitchBronBron/MadisonIlia.com.git"
   },
-  "author": "",
+  "author": "Madison Ilia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TwitchBronBron/MadisonIlia.com/issues"
   },
   "homepage": "https://github.com/TwitchBronBron/MadisonIlia.com#readme",
-  "devDependencies": {
-    "@types/gulp": "^4.0.7",
-    "@types/rimraf": "^3.0.0",
-    "ejs": "^3.1.5",
-    "gulp": "^4.0.2",
-    "gulp-ejs": "^5.1.0",
-    "gulp-server-livereload": "^1.9.2",
-    "rimraf": "^3.0.2",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+  "dependencies": {
+    "astro": "^7.4.13"
   }
 }

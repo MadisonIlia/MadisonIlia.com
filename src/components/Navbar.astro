@@ -1,0 +1,180 @@
+---
+interface Props {
+  activePage?: 'home' | 'novels' | 'about' | 'contact' | 'subscribe';
+}
+
+const { activePage = 'home' } = Astro.props;
+
+const links = [
+  { id: 'novels', label: 'Novels', href: '/novels.html' },
+  { id: 'about', label: 'About', href: '/about.html' },
+  { id: 'contact', label: 'Contact', href: '/contact.html' },
+  { id: 'subscribe', label: 'Subscribe', href: '/subscribe.html', isCta: true },
+] as const;
+---
+
+<header class="site-header">
+  <nav class="container nav-inner" aria-label="Primary">
+    <a class="brand" href="/">MADISON ILIA</a>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M4 7h16M4 12h16M4 17h16"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+
+    <ul id="primary-nav" class="nav-links" data-open="false">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'nav-link',
+                { active: activePage === link.id, 'nav-cta': 'isCta' in link && link.isCta },
+              ]}
+              aria-current={activePage === link.id ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(11, 17, 32, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4.5rem;
+    position: relative;
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    color: var(--text-light);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-dark);
+    color: var(--text-light);
+    padding: 0.45rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-muted-light);
+    text-decoration: none;
+    padding-block: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text-light);
+  }
+
+  .nav-link.active:not(.nav-cta) {
+    border-bottom-color: var(--accent-gold);
+  }
+
+  .nav-cta {
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-sm);
+    background-color: rgba(212, 163, 115, 0.16);
+    border: 1px solid rgba(212, 163, 115, 0.45);
+    color: var(--accent-gold);
+  }
+
+  .nav-cta:hover,
+  .nav-cta.active {
+    background-color: var(--accent-gold);
+    color: var(--accent-ink);
+  }
+
+  @media (max-width: 700px) {
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem;
+      background-color: var(--bg-night);
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-links[data-open='true'] {
+      display: flex;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.65rem 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const menu = document.querySelector<HTMLUListElement>('#primary-nav');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.setAttribute('data-open', String(!isOpen));
+    });
+  }
+</script>
