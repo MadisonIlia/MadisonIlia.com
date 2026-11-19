@@ -135,6 +135,16 @@ a {
   margin-bottom: 0.75rem;
 }
 
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(212, 163, 115, 0.14), transparent 52%),
+    radial-gradient(circle at 82% 75%, rgba(56, 189, 248, 0.08), transparent 48%),
+    var(--bg-night);
+  border-bottom: 1px solid var(--border-dark);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

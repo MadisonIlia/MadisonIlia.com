@@ -8,13 +8,6 @@ import { SITE } from '../data/site';
   description="Connect with author Madison Ilia via email, Facebook, Instagram, TikTok, or Goodreads."
   activePage="contact"
 >
-  <section class="page-hero section-dark">
-    <div class="container">
-      <span class="eyebrow">Contact</span>
-      <h1>Get in Touch</h1>
-    </div>
-  </section>
-
   <section class="section section-parchment">
     <div class="container contact-grid">
       <div class="contact-media">
@@ -29,7 +22,7 @@ import { SITE } from '../data/site';
       </div>
 
       <div class="contact-body">
-        <h2>I’d love to connect with you</h2>
+        <h1>Get in <span class="accent-dark">Touch</span></h1>
         <p>
           I check my email daily and reply as soon as my schedule allows. You can also{' '}
           <a href="/subscribe.html">subscribe to my newsletter</a> for release updates and exclusive
@@ -68,16 +61,6 @@ import { SITE } from '../data/site';
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding-block: clamp(3rem, 6vw, 4rem) 2.25rem;
-  }
-
-  .page-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.6rem);
-    color: #ffffff;
-    margin: 0;
-  }
-
   .contact-grid {
     display: grid;
     grid-template-columns: minmax(240px, 360px) 1fr;
@@ -93,9 +76,13 @@ import { SITE } from '../data/site';
     width: 100%;
   }
 
-  .contact-body h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  .contact-body h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
     margin-bottom: 0.75rem;
+  }
+
+  .accent-dark {
+    color: #9a6b3b;
   }
 
   .contact-body p {

@@ -19,7 +19,6 @@ import { BOOKS } from '../data/site';
 
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Madison Ilia</span>
         <h1>Welcome!</h1>
         <p class="hero-lead">
           I’m so glad you’re here! Both books in my <em>Navigating Justice</em> series, <em>The Crow</em> and
@@ -40,7 +39,6 @@ import { BOOKS } from '../data/site';
   <section class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">Novels</span>
         <h2>Navigating Justice Series</h2>
       </div>
 
@@ -63,7 +61,6 @@ import { BOOKS } from '../data/site';
         />
       </div>
       <div class="about-teaser-body">
-        <span class="eyebrow eyebrow-dark">About</span>
         <h2>More about me</h2>
         <p>
           I suppose a formal introduction is appropriate. I’m Madison Ilia. I live in a
@@ -79,7 +76,6 @@ import { BOOKS } from '../data/site';
   <section class="section section-slate">
     <div class="container newsletter-wrap">
       <div class="newsletter-copy">
-        <span class="eyebrow">Newsletter</span>
         <h2>Subscribe to my newsletter</h2>
         <p>
           Sign up for release updates, behind-the-scenes news, and exclusive content for email
@@ -147,6 +143,17 @@ import { BOOKS } from '../data/site';
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .hero-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+    }
   }
 
   .section-header {

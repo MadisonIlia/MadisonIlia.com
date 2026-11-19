@@ -10,27 +10,23 @@ import { BOOKS, SITE } from '../data/site';
   description="Current and future novels by Madison Ilia, including Navigating Justice: The Crow and Blurred Alliances."
   activePage="novels"
 >
-  <section class="page-hero section-dark">
+  <section class="section section-dark">
     <div class="container">
-      <span class="eyebrow">Novels</span>
-      <h1>Current and Future Novels</h1>
-    </div>
-  </section>
+      <h1 class="page-title">Current and Future <span class="accent">Novels</span></h1>
 
-  <section class="section section-dark books-section">
-    <div class="container books-list">
-      {
-        BOOKS.map((book, index) => (
-          <BookCard book={book} reverse={index % 2 === 1} />
-        ))
-      }
+      <div class="books-list">
+        {
+          BOOKS.map((book, index) => (
+            <BookCard book={book} reverse={index % 2 === 1} />
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section class="section section-parchment">
     <div class="container next-book-box">
       <div>
-        <span class="eyebrow eyebrow-dark">Newsletter</span>
         <h2>Subscribe to my newsletter</h2>
         <p>
           Sign up for release updates, behind-the-scenes news, and exclusive content for email
@@ -43,28 +39,19 @@ import { BOOKS, SITE } from '../data/site';
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
-    border-bottom: 1px solid var(--border-dark);
-  }
-
-  .page-hero h1 {
-    font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  .page-title {
+    font-size: clamp(2.2rem, 4.2vw, 3.2rem);
     color: #ffffff;
-    margin-bottom: 0;
+    margin-bottom: 2.25rem;
   }
 
-  .books-section {
-    padding-top: 3rem;
+  .accent {
+    color: var(--accent-gold);
   }
 
   .books-list {
     display: grid;
     gap: 2.5rem;
-  }
-
-  .eyebrow-dark {
-    color: #9a6b3b;
   }
 
   .next-book-box {
