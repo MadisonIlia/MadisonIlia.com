@@ -7,17 +7,13 @@ import { BOOKS, SITE } from '../data/site';
 
 <BaseLayout
   title={`Novels — ${SITE.author}`}
-  description="Explore the Navigating Justice romantic suspense series by Madison Ilia, including The Crow and Blurred Alliances."
+  description="Current and future novels by Madison Ilia, including Navigating Justice: The Crow and Blurred Alliances."
   activePage="novels"
 >
   <section class="page-hero section-dark">
     <div class="container">
-      <span class="eyebrow">Bibliography</span>
-      <h1>The Navigating Justice Series</h1>
-      <p class="lead">
-        High-stakes romantic suspense where undercover operatives, family ties, and blurred lines
-        push every character to the edge.
-      </p>
+      <span class="eyebrow">Novels</span>
+      <h1>Current and Future Novels</h1>
     </div>
   </section>
 
@@ -34,11 +30,11 @@ import { BOOKS, SITE } from '../data/site';
   <section class="section section-parchment">
     <div class="container next-book-box">
       <div>
-        <span class="eyebrow eyebrow-dark">Coming Next</span>
-        <h2>Waiting on Book 3?</h2>
+        <span class="eyebrow eyebrow-dark">Newsletter</span>
+        <h2>Subscribe to my newsletter</h2>
         <p>
-          Join the newsletter to be the first to hear about upcoming releases, cover reveals, and
-          exclusive bonus chapters.
+          Subscribe to my newsletter and receive exclusive content only available to email
+          subscribers!
         </p>
       </div>
       <NewsletterForm variant="light" idPrefix="novels-newsletter" />
@@ -55,14 +51,7 @@ import { BOOKS, SITE } from '../data/site';
   .page-hero h1 {
     font-size: clamp(2.4rem, 4.5vw, 3.5rem);
     color: #ffffff;
-    margin-bottom: 0.75rem;
-  }
-
-  .lead {
-    color: var(--text-muted-light);
-    max-width: 58ch;
-    margin: 0;
-    font-size: 1.12rem;
+    margin-bottom: 0;
   }
 
   .books-section {

@@ -10,8 +10,8 @@ import { SITE } from '../data/site';
 >
   <section class="page-hero section-dark">
     <div class="container">
-      <span class="eyebrow">Connect</span>
-      <h1>Get In Touch</h1>
+      <span class="eyebrow">Contact</span>
+      <h1>Get In Touch!</h1>
     </div>
   </section>
 
@@ -20,7 +20,7 @@ import { SITE } from '../data/site';
       <div class="contact-media">
         <img
           src="/images/bio-alt.jpg"
-          alt="Author Madison Ilia"
+          alt="Madison Ilia"
           width="800"
           height="1000"
           fetchpriority="high"
@@ -29,19 +29,22 @@ import { SITE } from '../data/site';
       </div>
 
       <div class="contact-body">
-        <h2>I’d love to hear from you!</h2>
+        <h2>Get In Touch!</h2>
         <p>
-          I check my email daily and will respond as soon as my schedule allows. You can also
-          <a href="/subscribe.html">subscribe to my newsletter</a> for exclusive content only
-          available to email subscribers.
+          I would love to connect with you! I check my email daily and will respond when my schedule
+          allows.
+        </p>
+        <p>
+          <a href="/subscribe.html">Subscribe to my newsletter</a> and receive exclusive content only
+          available to email subscribers!
         </p>
 
         <div class="contact-card">
-          <span class="contact-label">Direct Email</span>
+          <span class="contact-label">Email</span>
           <a href={`mailto:${SITE.email}`} class="contact-email">{SITE.email}</a>
         </div>
 
-        <h3>Find me on social media</h3>
+        <h3>You can also find me on social media!</h3>
         <div class="social-grid">
           {
             SITE.socials.map((social) => (

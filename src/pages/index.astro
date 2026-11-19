@@ -9,7 +9,7 @@ import { BOOKS } from '../data/site';
   <section class="hero section-dark">
     <img
       src="/images/the-crow-banner.jpg"
-      alt="Starry night sky above a dark highway with Navigating Justice: The Crow"
+      alt="Navigating Justice: The Crow by Madison Ilia"
       width="2000"
       height="1333"
       fetchpriority="high"
@@ -17,21 +17,22 @@ import { BOOKS } from '../data/site';
     />
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="container hero-content">
-      <span class="eyebrow">Romantic Suspense &middot; Indie Author</span>
-      <h1>Where Justice, Loyalty &amp; Vengeance Collide</h1>
-      <p class="hero-lead">
-        Welcome to the official home of <strong>Madison Ilia</strong>, author of the
-        <em>Navigating Justice</em> series—featuring <em>The Crow</em> and the newest installment,
-        <em>Blurred Alliances</em>.
-      </p>
-      <div class="hero-actions">
-        <a href={BOOKS[0].amazonUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          Read Book 2: Blurred Alliances
-        </a>
-        <a href="/novels.html" class="btn btn-outline-light">
-          Explore the Series
-        </a>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Madison Ilia</span>
+        <h1>Welcome!</h1>
+        <p class="hero-lead">
+          I am beyond excited to have you here! My novels <em>Navigating Justice: The Crow</em> and
+          <em>Blurred Alliances</em> are available for purchase on Amazon.
+        </p>
+        <div class="hero-actions">
+          <a href={BOOKS[0].amazonUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Order Blurred Alliances
+          </a>
+          <a href="/novels.html" class="btn btn-outline-light">
+            Current and Future Novels
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -39,11 +40,8 @@ import { BOOKS } from '../data/site';
   <section class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">The Books</span>
+        <span class="eyebrow">Novels</span>
         <h2>Navigating Justice Series</h2>
-        <p class="section-intro">
-          Undercover DEA agents, fractured loyalties, and the thin line between justice and revenge.
-        </p>
       </div>
 
       <div class="books-stack">
@@ -57,7 +55,7 @@ import { BOOKS } from '../data/site';
       <div class="about-teaser-media">
         <img
           src="/images/bio-alt.jpg"
-          alt="Author Madison Ilia smiling"
+          alt="Madison Ilia"
           width="800"
           height="1000"
           loading="lazy"
@@ -65,15 +63,14 @@ import { BOOKS } from '../data/site';
         />
       </div>
       <div class="about-teaser-body">
-        <span class="eyebrow eyebrow-dark">Meet the Author</span>
-        <h2>Small-Town Roots, High-Stakes Stories</h2>
+        <span class="eyebrow eyebrow-dark">About</span>
+        <h2>More about me</h2>
         <p>
-          I'm Madison Ilia—a writer with too many words and a shortage of hours in the day to get
-          them all down. When I'm not writing, you'll find me working rotating shifts as a police
-          dispatcher, practicing massage therapy, chasing after my daughter, and drinking way too
-          much coffee.
+          I suppose a formal introduction is appropriate. I'm Madison Ilia. I live in the middle of
+          nowhere town, where the sun shines once a week if we're lucky, we have more rocks than
+          grass, and the trees have taken over; but it's ok we hold our own when we need to cut it.
         </p>
-        <a href="/about.html" class="btn btn-outline-dark">More About Madison</a>
+        <a href="/about.html" class="btn btn-outline-dark">More about me</a>
       </div>
     </div>
   </section>
@@ -81,11 +78,11 @@ import { BOOKS } from '../data/site';
   <section class="section section-slate">
     <div class="container newsletter-wrap">
       <div class="newsletter-copy">
-        <span class="eyebrow">Reader Club</span>
-        <h2>Get Release Dates &amp; Exclusive Content</h2>
+        <span class="eyebrow">Newsletter</span>
+        <h2>Subscribe to my newsletter</h2>
         <p>
-          Subscribe to my newsletter for behind-the-scenes updates, early cover reveals, and
-          exclusive bonus scenes only available to email subscribers.
+          Subscribe to my newsletter and receive exclusive content only available to email
+          subscribers!
         </p>
       </div>
       <NewsletterForm variant="dark" idPrefix="home-newsletter" />
@@ -123,11 +120,13 @@ import { BOOKS } from '../data/site';
     );
   }
 
-  .hero-content {
+  .hero > .container {
     position: relative;
     z-index: 1;
+  }
+
+  .hero-content {
     max-width: 40rem;
-    margin-inline: 0;
   }
 
   .hero h1 {
@@ -157,12 +156,6 @@ import { BOOKS } from '../data/site';
     font-size: clamp(2rem, 4vw, 3rem);
     color: #ffffff;
     margin-bottom: 0.5rem;
-  }
-
-  .section-intro {
-    color: var(--text-muted-light);
-    max-width: 56ch;
-    margin: 0;
   }
 
   .books-stack {
