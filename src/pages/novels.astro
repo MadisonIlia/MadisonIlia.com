@@ -3,12 +3,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BookCard from '../components/BookCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { BOOKS, SITE } from '../data/site';
+
+const bookSchemas = BOOKS.map((book) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: book.title,
+  author: {
+    '@type': 'Person',
+    name: SITE.author,
+    url: 'https://madisonilia.com',
+  },
+  isPartOf: {
+    '@type': 'BookSeries',
+    name: book.series,
+  },
+  position: book.bookNumber,
+  ...(book.year ? { datePublished: book.year } : {}),
+  ...(book.coverImage ? { image: `https://madisonilia.com${book.coverImage}` } : {}),
+  url: book.amazonUrl,
+  sameAs: [book.amazonUrl, ...(book.goodreadsUrl ? [book.goodreadsUrl] : [])],
+}));
 ---
 
 <BaseLayout
   title={`Novels — ${SITE.author}`}
   description="Current and future novels by Madison Ilia, including Navigating Justice: The Crow and Blurred Alliances."
   activePage="novels"
+  structuredData={bookSchemas}
 >
   <section class="section section-dark">
     <div class="container">

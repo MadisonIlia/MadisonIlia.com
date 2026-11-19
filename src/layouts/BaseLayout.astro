@@ -8,13 +8,39 @@ interface Props {
   title?: string;
   description?: string;
   activePage?: 'home' | 'novels' | 'about' | 'contact' | 'subscribe';
+  ogImage?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title = SITE.title,
   description = SITE.description,
   activePage = 'home',
+  ogImage = '/images/the-crow-banner.jpg',
+  structuredData,
 } = Astro.props;
+
+const siteOrigin = Astro.site?.toString().replace(/\/$/, '') ?? 'https://madisonilia.com';
+const pathname = Astro.url.pathname === '/index.html' ? '/' : Astro.url.pathname;
+const canonicalUrl = `${siteOrigin}${pathname}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteOrigin}${ogImage}`;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.author,
+  url: siteOrigin,
+  email: SITE.email,
+  jobTitle: 'Author',
+  sameAs: [
+    SITE.amazonAuthorUrl,
+    ...SITE.socials.map((s) => s.url),
+  ],
+};
+
+const schemas = structuredData
+  ? [personSchema, ...(Array.isArray(structuredData) ? structuredData : [structuredData])]
+  : [personSchema];
 ---
 
 <!doctype html>
@@ -24,6 +50,22 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.author} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemas)} />
+
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -20,6 +20,7 @@ export const SITE = {
   author: 'Madison Ilia',
   publisher: 'Rain Publishing, LLC',
   email: 'madisonilia@outlook.com',
+  amazonAuthorUrl: 'https://www.amazon.com/Madison-Ilia/e/B09W45VVC5',
   analyticsId: 'G-DEKL8V60E4',
   mailchimp: {
     actionUrl:
