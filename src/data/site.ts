@@ -58,27 +58,6 @@ export const SITE = {
 
 export const BOOKS: Book[] = [
   {
-    id: 'blurred-alliances',
-    series: 'Navigating Justice',
-    bookNumber: 2,
-    title: 'Blurred Alliances',
-    tagline:
-      '“When people from your present and past mix...you find yourself scrambling to balance truth and lies.” ~Confessions of Undercover Law Enforcement',
-    description: [
-      'Sophia wants what anyone wants—peace and quiet. She’s experienced enough near-death experiences to last a lifetime, but trouble has a way of finding her. Her attempts to stay off the grid are shattered when a young girl stumbles into Sophia’s new life, completely derailing her.',
-      'Ace’s life, in and out of uniform, quickly spirals into the gray area where law enforcement and crime intersect. He struggles to remain neutral when someone close to him is teetering on the line of family or enemy.',
-      'Sophia and Ace find themselves partners, once again, untangling a web of lies and forcing them to create barriers around the people they trust most. Their illusion of safety is shattered as they realize the betrayal runs long and deep. Nothing is off limits when protecting your own.',
-      'Sophia and Ace have tasted death before; its lingering bitterness has them racked and ready for anything. Coloring outside crooked lines in a picture they intend to burn, brings them full circle to a past that won’t stay where it should. These former feds are done running. Fighting injustice with bullets, fists, and brains, they are jolted back into the world of organized crime where blood, badges, and titles mean very little when you are staring at the barrel of a gun.',
-    ],
-    coverImage: '/images/blurred-alliances.jpg',
-    coverAlt: 'Book cover for Navigating Justice: Blurred Alliances by Madison Ilia',
-    amazonUrl:
-      'https://www.amazon.com/Blurred-Alliances-Navigating-Justice-Madison/dp/B0CDZ41YH5',
-    goodreadsUrl:
-      'https://www.goodreads.com/book/show/195882407-blurred-alliances',
-    isNew: true,
-  },
-  {
     id: 'the-crow',
     series: 'Navigating Justice',
     bookNumber: 1,
@@ -98,5 +77,26 @@ export const BOOKS: Book[] = [
       'https://www.amazon.com/Crow-Navigating-Justice-Book-ebook/dp/B09RJPSP2M',
     goodreadsUrl:
       'https://www.goodreads.com/book/show/60443583-the-crow',
+  },
+  {
+    id: 'blurred-alliances',
+    series: 'Navigating Justice',
+    bookNumber: 2,
+    title: 'Blurred Alliances',
+    tagline:
+      '“When people from your present and past mix...you find yourself scrambling to balance truth and lies.” ~Confessions of Undercover Law Enforcement',
+    description: [
+      'Sophia wants what anyone wants—peace and quiet. She’s experienced enough near-death experiences to last a lifetime, but trouble has a way of finding her. Her attempts to stay off the grid are shattered when a young girl stumbles into Sophia’s new life, completely derailing her.',
+      'Ace’s life, in and out of uniform, quickly spirals into the gray area where law enforcement and crime intersect. He struggles to remain neutral when someone close to him is teetering on the line of family or enemy.',
+      'Sophia and Ace find themselves partners, once again, untangling a web of lies and forcing them to create barriers around the people they trust most. Their illusion of safety is shattered as they realize the betrayal runs long and deep. Nothing is off limits when protecting your own.',
+      'Sophia and Ace have tasted death before; its lingering bitterness has them racked and ready for anything. Coloring outside crooked lines in a picture they intend to burn, brings them full circle to a past that won’t stay where it should. These former feds are done running. Fighting injustice with bullets, fists, and brains, they are jolted back into the world of organized crime where blood, badges, and titles mean very little when you are staring at the barrel of a gun.',
+    ],
+    coverImage: '/images/blurred-alliances.jpg',
+    coverAlt: 'Book cover for Navigating Justice: Blurred Alliances by Madison Ilia',
+    amazonUrl:
+      'https://www.amazon.com/Blurred-Alliances-Navigating-Justice-Madison/dp/B0CDZ41YH5',
+    goodreadsUrl:
+      'https://www.goodreads.com/book/show/195882407-blurred-alliances',
+    isNew: true,
   },
 ];

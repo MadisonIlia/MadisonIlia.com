@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { BOOKS } from '../data/site';
 
-const latestBook = BOOKS[0];
+const latestBook = BOOKS.find((b) => b.isNew) ?? BOOKS[BOOKS.length - 1];
 ---
 
 <BaseLayout activePage="home">
@@ -51,9 +51,7 @@ const latestBook = BOOKS[0];
 
       <div class="series-grid">
         {
-          BOOKS.slice()
-            .reverse()
-            .map((book) => (
+          BOOKS.map((book) => (
               <article class="series-card">
                 <a href="/novels.html" class="series-cover-link">
                   <img
@@ -256,12 +254,17 @@ const latestBook = BOOKS[0];
     display: grid;
     grid-template-columns: minmax(130px, 180px) 1fr;
     gap: 1.5rem;
-    align-items: start;
+    align-items: stretch;
     background-color: var(--bg-slate);
     border: 1px solid var(--border-dark);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     box-shadow: var(--shadow-lg);
+  }
+
+  .series-card-body {
+    display: flex;
+    flex-direction: column;
   }
 
   .series-cover-link {
@@ -315,6 +318,7 @@ const latestBook = BOOKS[0];
     display: flex;
     flex-wrap: wrap;
     gap: 0.65rem;
+    margin-top: auto;
   }
 
   .series-actions .btn {

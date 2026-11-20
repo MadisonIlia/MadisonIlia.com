@@ -36,11 +36,7 @@ const bookSchemas = BOOKS.map((book) => ({
       <h1 class="page-title">Current and Future <span class="accent">Novels</span></h1>
 
       <div class="books-list">
-        {
-          BOOKS.map((book, index) => (
-            <BookCard book={book} reverse={index % 2 === 1} />
-          ))
-        }
+        {BOOKS.map((book) => <BookCard book={book} />)}
       </div>
     </div>
   </section>
