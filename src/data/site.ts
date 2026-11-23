@@ -22,13 +22,6 @@ export const SITE = {
   email: 'madisonilia@outlook.com',
   amazonAuthorUrl: 'https://www.amazon.com/Madison-Ilia/e/B09W45VVC5',
   analyticsId: 'G-DEKL8V60E4',
-  mailchimp: {
-    actionUrl:
-      'https://madisonilia.us5.list-manage.com/subscribe/post?u=b5dff6ca593ab9f81a7b1be1b&id=859e952d9e',
-    honeypotName: 'b_b5dff6ca593ab9f81a7b1be1b_859e952d9e',
-    connectedScript:
-      'https://chimpstatic.com/mcjs-connected/js/users/b5dff6ca593ab9f81a7b1be1b/3ef03beb990c37c6bc9cc831b.js',
-  },
   socials: [
     {
       name: 'Facebook',

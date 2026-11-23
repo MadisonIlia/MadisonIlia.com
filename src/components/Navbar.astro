@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activePage?: 'home' | 'novels' | 'about' | 'contact' | 'subscribe';
+  activePage?: 'home' | 'novels' | 'about' | 'contact';
 }
 
 const { activePage = 'home' } = Astro.props;
@@ -9,7 +9,6 @@ const links = [
   { id: 'novels', label: 'Novels', href: '/novels.html' },
   { id: 'about', label: 'About', href: '/about.html' },
   { id: 'contact', label: 'Contact', href: '/contact.html' },
-  { id: 'subscribe', label: 'Subscribe', href: '/subscribe.html', isCta: true },
 ] as const;
 ---
 
@@ -40,10 +39,7 @@ const links = [
           <li>
             <a
               href={link.href}
-              class:list={[
-                'nav-link',
-                { active: activePage === link.id, 'nav-cta': 'isCta' in link && link.isCta },
-              ]}
+              class:list={['nav-link', { active: activePage === link.id }]}
               aria-current={activePage === link.id ? 'page' : undefined}
             >
               {link.label}

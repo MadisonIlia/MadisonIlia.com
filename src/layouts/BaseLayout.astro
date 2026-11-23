@@ -7,7 +7,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  activePage?: 'home' | 'novels' | 'about' | 'contact' | 'subscribe';
+  activePage?: 'home' | 'novels' | 'about' | 'contact';
   ogImage?: string;
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -76,9 +76,6 @@ const schemas = structuredData
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Mailchimp Connected Sites -->
-    <script is:inline id="mcjs" src={SITE.mailchimp.connectedScript} async></script>
 
     <!-- Google Analytics -->
     <script

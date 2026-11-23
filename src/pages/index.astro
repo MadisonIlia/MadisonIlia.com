@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import { BOOKS } from '../data/site';
 
 const latestBook = BOOKS.find((b) => b.isNew) ?? BOOKS[BOOKS.length - 1];
@@ -129,19 +128,6 @@ const latestBook = BOOKS.find((b) => b.isNew) ?? BOOKS[BOOKS.length - 1];
         </p>
         <a href="/about.html" class="btn btn-outline-dark">Read my full story</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-dark newsletter-band">
-    <div class="container newsletter-wrap">
-      <div class="newsletter-copy">
-        <h2>Subscribe to my <span class="accent">newsletter</span></h2>
-        <p>
-          Sign up for release updates, behind-the-scenes news, and exclusive content for email
-          subscribers.
-        </p>
-      </div>
-      <NewsletterForm variant="dark" idPrefix="home-newsletter" />
     </div>
   </section>
 </BaseLayout>
@@ -379,28 +365,6 @@ const latestBook = BOOKS.find((b) => b.isNew) ?? BOOKS[BOOKS.length - 1];
     max-width: 54ch;
   }
 
-  .newsletter-band {
-    border-top: 1px solid var(--border-dark);
-  }
-
-  .newsletter-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
-  }
-
-  .newsletter-copy h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
-    color: #ffffff;
-    margin-bottom: 0.75rem;
-  }
-
-  .newsletter-copy p {
-    color: var(--text-muted-light);
-    margin: 0;
-  }
-
   @media (max-width: 960px) {
     .series-grid {
       grid-template-columns: 1fr;
@@ -416,8 +380,7 @@ const latestBook = BOOKS.find((b) => b.isNew) ?? BOOKS[BOOKS.length - 1];
       );
     }
 
-    .about-teaser,
-    .newsletter-wrap {
+    .about-teaser {
       grid-template-columns: 1fr;
     }
 

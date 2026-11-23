@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookCard from '../components/BookCard.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import { BOOKS, SITE } from '../data/site';
 
 const bookSchemas = BOOKS.map((book) => ({
@@ -40,19 +39,6 @@ const bookSchemas = BOOKS.map((book) => ({
       </div>
     </div>
   </section>
-
-  <section class="section section-parchment">
-    <div class="container next-book-box">
-      <div>
-        <h2>Subscribe to my newsletter</h2>
-        <p>
-          Sign up for release updates, behind-the-scenes news, and exclusive content for email
-          subscribers.
-        </p>
-      </div>
-      <NewsletterForm variant="light" idPrefix="novels-newsletter" />
-    </div>
-  </section>
 </BaseLayout>
 
 <style>
@@ -69,28 +55,5 @@ const bookSchemas = BOOKS.map((book) => ({
   .books-list {
     display: grid;
     gap: 2.5rem;
-  }
-
-  .next-book-box {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
-  }
-
-  .next-book-box h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
-    margin-bottom: 0.65rem;
-  }
-
-  .next-book-box p {
-    color: var(--text-muted-dark);
-    margin: 0;
-  }
-
-  @media (max-width: 820px) {
-    .next-book-box {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
